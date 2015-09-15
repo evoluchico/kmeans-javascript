@@ -109,9 +109,9 @@ KMeans.Demo = {}
 
 KMeans.Demo.createVisualization = function(selector, maxValue) {
 
-    var colors = ["red","green","blue","yellow","orange","grey"];
+    var colors = ["red","green","blue","yellow","orange","grey","purple","pink"];
     var vizPadding = 0.5;
-    var animationDuration = 750;
+    var animationDuration = 1200;
 
     var visualizationSvg;
     var vizDimension;
@@ -165,7 +165,7 @@ KMeans.Demo.createVisualization = function(selector, maxValue) {
             .style("fill", color)
             .style("fill-opacity", 1e-6)
             .transition()
-                .duration(750)
+                .duration(animationDuration)
                 .attr("y", 0)
                 .style("fill-opacity", 1);
 
@@ -224,7 +224,7 @@ KMeans.Demo.createVisualization = function(selector, maxValue) {
 
                 lineSelection
                     .transition()
-                    .duration(750)
+                    .duration(animationDuration)
                     .attr("x2", linearScale(centroids[index][0]))
                     .attr("y2", linearScale(centroids[index][1]));
 
@@ -244,7 +244,7 @@ KMeans.Demo.Application = (function() {
     var maxValue = 10;
     var numObservations = 100;
     var numCentroids = 3;
-    var iterationDelay = 1000;
+    var iterationDelay = 3000;
 
     return {
         init: function() {
